@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@100..900&display=swap');
+
+/* 공통 */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 24px;
+  overflow-x: hidden;
+  background: #ffa486;
+  color: #3569d8;
+  text-align: center;
+  font-family: "Noto Sans KR", sans-serif;
+  line-height: 1.7;
+}
+
+main,
+footer {
+  max-width: 800px;
+  margin: 0 auto 32px;
+}
+
+/* 첫 화면 */
+header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  grid-template-rows: 1fr;
+  column-gap: 24px;
+  min-height: calc(100vh - 48px);
+  text-align: left;
+  max-width: 800px;
+  margin: 0 auto 60px;
+}
+
+header h1 {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: center;
+  justify-self: center;
+  margin: 0;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  font-family: "Black Han Sans", sans-serif;
+  font-size: clamp(44px, 7vw, 76px);
+  font-weight: 400;
+  line-height: 0.9;
+  letter-spacing: 0.06em;
+}
+
+.header-intro {
+  grid-column: 1;
+  grid-row: 1;
+  align-self: start;
+  justify-self: start;
+  max-width: 280px;
+  margin: 8px 0;
+  white-space: pre-line;
+  font-size: clamp(14px, 1.8vw, 17px);
+}
+
+.header-message {
+  grid-column: 3;
+  grid-row: 1;
+  align-self: end;
+  justify-self: end;
+  max-width: 280px;
+  margin: 8px 0;
+  text-align: right;
+  white-space: pre-line;
+  font-size: clamp(14px, 1.8vw, 17px);
+}
+
+/* header 다음에 보이는 Juan 소개 */
+.hungry-juan {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: min(100% - 48px, 310px);
+  margin: 0 auto 80px;
+  text-align: center;
+  white-space: pre-line;
+}
+
+.hungry-juan img {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter:
+    drop-shadow(4px 0 #3569d8)
+    drop-shadow(-4px 0 #3569d8)
+    drop-shadow(0 4px #3569d8)
+    drop-shadow(0 -4px #3569d8);
+}
+
+.hungry-juan p {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+}
+
+.hungry-juan p strong {
+  font-family: "Black Han Sans", sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+}
+
+/* 작품 목록 */
+h2 {
+  font-family: "Black Han Sans", sans-serif;
+  font-weight: 400;
+}
+
+.blue-section {
+  display: grid;
+  grid-template-columns: minmax(0, 800px);
+  justify-content: center;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  padding: 0 24px;
+  background: #3569d8;
+  color: white;
+}
+
+.cat-stage {
+  position: sticky;
+  z-index: 10;
+  top: 0;
+  width: min(85vw, 600px);
+  margin: 0 auto;
+  pointer-events: none;
+}
+
+.juan {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter:
+    drop-shadow(4px 0 #ffa486)
+    drop-shadow(-4px 0 #ffa486)
+    drop-shadow(0 4px #ffa486)
+    drop-shadow(0 -4px #ffa486);
+}
+
+.gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60vh;
+}
+
+figure {
+  width: min(50vw, 300px);
+  margin: 0;
+  padding: 24px;
+}
+
+figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: 35px;
+  filter:
+    drop-shadow(4px 0 white)
+    drop-shadow(-4px 0 white)
+    drop-shadow(0 4px white)
+    drop-shadow(0 -4px white);
+}
+
+figcaption {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+figcaption strong {
+  align-self: center;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: 5px;
+  word-spacing: -10px;
+}
+
+/* 마지막 여백 */
+.ending-space {
+  height: 100vh;
+}
+
+/* 모바일 */
+@media (max-width: 520px) {
+  header {
+    column-gap: 16px;
+  }
+
+  header h1 {
+    font-size: clamp(35px, 11vw, 52px);
+  }
+
+  .header-intro,
+  .header-message {
+    max-width: 120px;
+    font-size: 13px;
+  }
+
+  .hungry-juan {
+    width: min(100% - 48px, 170px);
+  }
+}
